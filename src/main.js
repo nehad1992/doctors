@@ -7,21 +7,22 @@ import { Doctors } from "./../src/doctors.js";
 $(document).ready(function() {
   $("#getDoctors").click(function(event) {
     event.preventDefault();
+    const condition = $("#condition").val();
+    $("#condition").val("");
 
     (async () => {
-      let doctor = new Doctors();
-      const response = await doctor.getDoctorByCondition();
-      this.getElements(response);
+      let doctors = new Doctors();
+      const response = await doctor.getDoctorByCondition(condition);
+      getElements(response);
     })();
 
     function getElements(response) {
       if (response) {
-        for (let i = 0; i < response.length; i++) {
-          console.log(response.data[i].profile.first_name);
-          $("#results").append(`<p>${response.data[i].profile.first_name}</p>`);
-        }
+        $(".showDoctors").text(
+          `The doctors for your ${condition} are ${response.main.doctors}`
+        );
       } else {
-        console.log("There was an error handling your request");
+        $(".showDoctors").text("There was an error handling your request");
       }
     }
   });

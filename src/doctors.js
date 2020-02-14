@@ -13,8 +13,8 @@ export class Doctors {
         jsonifiedResponse = false;
       }
       return jsonifiedResponse;
-    } catch (error) {
-      console.log("There was an error handling your request:" + error.messeage);
+    } catch {
+      return false;
     }
   }
 }
