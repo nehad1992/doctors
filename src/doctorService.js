@@ -13,7 +13,7 @@ export class DoctorService {
     } else {
       jsonifiedResponse = false;
     }
-    alert(jsonifiedResponse);
+
     return jsonifiedResponse;
     /** 
 

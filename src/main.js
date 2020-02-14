@@ -24,9 +24,13 @@ $(document).ready(function() {
       for (var i = 0; i < doctorArray.length; i++) {
         var abcd = doctorArray[i];
         var edfg = abcd.profile;
-        console.log(edfg);
+        // console.log(edfg);
+        let firstName = edfg[1].first_name;
+        let middleName = edfg[2].middle_name;
+        let lstName = edfg[3].lastName;
+        console.log(firstName, middleName, lstName);
       }
-      $(".showDoctors").text("There was an error handling your request");
+      // $(".showDoctors").text("There was an error handling your request");
     }
   });
 });
