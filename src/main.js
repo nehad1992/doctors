@@ -2,7 +2,7 @@ import $ from "jquery";
 import "bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./styles.css";
-import { Doctors } from "./../src/doctors.js";
+import { DoctorService } from "./../src/doctorService.js";
 
 $(document).ready(function() {
   $("#getDoctors").click(function(event) {
@@ -11,19 +11,22 @@ $(document).ready(function() {
     $("#condition").val("");
 
     (async () => {
-      let doctors = new Doctors();
-      const response = await doctor.getDoctorByCondition(condition);
+      let doctorService = new DoctorService();
+      const response = await doctorService.getDoctorByCondition(condition);
       getElements(response);
     })();
 
     function getElements(response) {
-      if (response) {
-        $(".showDoctors").text(
-          `The doctors for your ${condition} are ${response.main.doctors}`
-        );
-      } else {
-        $(".showDoctors").text("There was an error handling your request");
+      var doctorArray = [];
+      if (response && response.data && response.data.length > 0) {
+        doctorArray = response.data;
       }
+      for (var i = 0; i < doctorArray.length; i++) {
+        var abcd = doctorArray[i];
+        var edfg = abcd.profile;
+        console.log(edfg);
+      }
+      $(".showDoctors").text("There was an error handling your request");
     }
   });
 });
