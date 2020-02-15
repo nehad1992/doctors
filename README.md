@@ -25,7 +25,7 @@ _This app makes an API call to the BetterDoctor API to yield results. The user c
 
 ## Known Bugs
 
-_Gives same list of doctors _
+_No known bugs _
 
 ## Support and contact details
 
