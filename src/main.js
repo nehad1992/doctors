@@ -7,8 +7,7 @@ import { DoctorService } from "./../src/doctorService.js";
 $(document).ready(function() {
   $("#getDoctors").click(function(event) {
     event.preventDefault();
-    const condition = $("#condition").val();
-    $("#condition").val("");
+    var condition = $("#condition").val();
 
     (async () => {
       let doctorService = new DoctorService();
@@ -16,21 +15,30 @@ $(document).ready(function() {
       getElements(response);
     })();
 
+    $("#condition").val("");
+
     function getElements(response) {
       var doctorArray = [];
       if (response && response.data && response.data.length > 0) {
         doctorArray = response.data;
       }
+
       for (var i = 0; i < doctorArray.length; i++) {
-        var abcd = doctorArray[i];
-        var edfg = abcd.profile;
-        // console.log(edfg);
-        let firstName = edfg[1].first_name;
-        let middleName = edfg[2].middle_name;
-        let lstName = edfg[3].lastName;
-        console.log(firstName, middleName, lstName);
+        var doctorsList = doctorArray[i];
+        var indDoctor = doctorsList.profile;
+
+        let firstName = indDoctor.first_name;
+        let middleName = indDoctor.middle_name;
+        let lastName = indDoctor.last_name;
+
+        $(".showDoctors").append(
+          "<li>" + firstName + " " + middleName + " " + lastName + "</li>"
+        );
+
+        //console.log(firstName, middleName, lastName);
       }
-      // $(".showDoctors").text("There was an error handling your request");
+
+      // $(".showDoctors").text(html);
     }
   });
 });
