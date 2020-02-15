@@ -25,7 +25,7 @@ _This app makes an API call to the BetterDoctor API to yield results. The user c
 
 ## Known Bugs
 
-_Currently gives results only for toothaches. _
+_Gives same list of doctors _
 
 ## Support and contact details
 
