@@ -25,15 +25,15 @@ _This app makes an API call to the BetterDoctor API to yield results. The user c
 
 ## Known Bugs
 
-_No known bugs _
+_No known bugs_
 
 ## Support and contact details
 
-_Neha @ Epicodus _
+_Neha @ Epicodus_
 
 ## Technologies Used
 
-- _ HTML_
+- _HTML_
 - _CSS_
 - _JAVASCRIPT_
 - _ESLINT_
