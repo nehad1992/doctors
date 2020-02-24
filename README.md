@@ -37,7 +37,7 @@ _Neha @ Epicodus_
 - _CSS_
 - _JAVASCRIPT_
 - _ESLINT_
-- _wEBPACK_
+- _WEBPACK_
 - _jQUERY_
 
 ### License
